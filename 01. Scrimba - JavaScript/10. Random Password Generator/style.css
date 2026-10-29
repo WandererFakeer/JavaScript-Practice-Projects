@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  border: none;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: Sans-serif;
+}
+
+:root {
+  --common-width: calc(100% - 2rem);
+  --grid-width: min(var(--common-width), 400 / 16 * 1rem);
+  --spacer-1: 1rem;
+  --spacer-2: 2rem;
+  --border-radius: 0.3rem;
+  --color-1: rgb(31, 41, 55);
+  --color-2: rgb(16, 185, 129);
+  --color-3: rgb(39, 53, 73);
+  --color-4: rgb(23 117 86 / 1);
+  --color-5: rgb(25 211 151);
+  --color-6: rgb(23 117 86 / 0.5);
+  --color-7: hsl(215, 64.37%, 76.11%);
+}
+
+body {
+  background-color: var(--color-1);
+}
+
+:where(header, main) {
+  width: min(var(--common-width), 1000 / 16 * 1rem);
+  margin: var(--spacer-2) auto;
+  padding-inline: var(--spacer-1);
+  display: grid;
+  gap: var(--spacer-1);
+}
+
+main {
+  padding-block-start: var(--spacer-1);
+}
+
+span {
+  color: var(--color-2);
+  letter-spacing: 1px;
+  display: block;
+}
+
+div {
+  display: flex;
+  gap: var(--spacer-2);
+}
+
+div > * {
+  padding: 0.7rem var(--spacer-1);
+  border-radius: var(--border-radius);
+}
+
+input {
+  color: var(--color-1);
+}
+
+button {
+  background-color: var(--color-4);
+  cursor: pointer;
+  transition: background-color 1000ms, font-weight 1200ms, text-shadow 1000ms;
+}
+
+button:is(:hover, :focus-visible) {
+  background-color: var(--color-6);
+  font-weight: 700;
+  text-shadow: -4px 4px 3px rgb(0, 0, 0);
+  transition: background-color 400ms, font-weight 450ms, text-shadow 500ms;
+}
+
+article {
+  margin-block: var(--spacer-1);
+  border-block-start: 2px solid;
+  padding-block-start: var(--spacer-2);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-width)), 1fr));
+  gap: var(--spacer-1);
+}
+
+.password {
+  background-color: var(--color-3);
+  padding: 1.3rem;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  position: absolute;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* Dynamically added class with JavaScript */
+.password.generated-password {
+  color: var(--color-5);
+}

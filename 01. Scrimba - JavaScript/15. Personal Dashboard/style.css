@@ -1,0 +1,182 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Sans-serif;
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  background: no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-shadow: -2px 2px 10px #000;
+}
+
+main{
+  height: 100%;
+  margin-inline: 1rem;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  
+  @media (width > calc(500 / 16 * 1rem)){
+    margin-inline: 2rem;
+  }
+  
+}
+
+:where(.stock-market-section, .weather-section, .time, .random-todo-list > li, .bg-image-author-name, .quote-section){
+  background-color: lch(98.26% 25.4 101.05 / 0.3);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+:where(.stock-market-and-weather-header, .bg-image-author-name, .quote-section){
+  margin-block: 1rem;
+  
+  @media (width > calc(500 / 16 * 1rem)){
+    margin-block: 2rem;
+  }
+  
+}
+
+.stock-market-and-weather-header{
+  align-self: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: clamp(0.5rem, 0.5rem + 0.5vw, 0.75rem);
+}
+
+.stock-market-section{
+  display: grid;
+  gap: 0.25rem;
+}
+
+.weather-section{
+  display: grid;
+}
+
+.time{
+  place-self: center;
+  font-size: clamp(2rem, 2rem + 0.5vw, 2.5rem);
+}
+
+.random-todo-list{
+  align-self: start;
+  list-style: "📌";
+  list-style-position: inside;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.bg-image-author-name-and-quote{
+  justify-self: start;
+  align-self: end;
+
+  @media (width > calc(1000 / 16 * 1rem)){
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-self: stretch;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.bg-image-author-name{
+  justify-self: start;
+  font-size: clamp(0.5rem, 0.75rem + 0.25vw, 1rem);
+  font-weight: 500;
+}
+
+.quote-section{
+  display: none;
+  
+  @media (width > calc(1000 / 16 * 1rem)){
+    justify-self: end;
+    display: grid;
+    gap: 0.5rem;
+  }
+}
+
+/* Dynamically added classes with JavaScript */
+.stock-market-logo{
+  width: 3rem;
+  height: 1.25rem;
+  grid-column: 1;
+}
+
+:where(.stock-market-name, .current-index, .change-index, .high-index, .low-index){
+  font-size: clamp(0.5rem, 0.75rem + 0.25vw, 1rem);
+}
+
+.stock-market-name{
+  grid-column: 2;
+  justify-self: center;
+  margin-inline-start: -5rem;
+}
+
+:where(.current-index, .change-index, .high-index, .low-index){
+  align-self: center;
+}
+
+.current-index{
+  grid-column: 1;
+}
+
+.change-index{
+  margin-inline-start: 0.25rem;
+}
+
+.high-index{
+  grid-column: 1;
+}
+
+.low-index{
+  grid-column: 1;
+}
+
+.weather-icon{
+  width: 2.5rem;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+}
+
+.temperature{
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  font-size: clamp(0.5rem, 0.75rem + 0.25vw, 1rem);
+}
+
+.place{
+  grid-column: 2;
+  grid-row: 2;
+  margin-block-start: -0.4rem;
+}
+
+.random-todo-list > li{
+  font-size: clamp(0.5rem, 0.75rem + 0.25vw, 1rem);
+  font-weight: 550;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+a:is(:hover, :focus-visible){
+  color: black;
+  text-decoration: underline;
+}
+
+:where(.quote, .quote-author){
+  font-size: clamp(0.5rem, 0.75rem + 0.25vw, 1rem);
+  font-weight: 600;
+}

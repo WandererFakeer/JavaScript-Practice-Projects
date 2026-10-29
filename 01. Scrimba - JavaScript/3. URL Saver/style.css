@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  border: none;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+:root {
+  --spacer-one: 0.7rem;
+  --spacer-two: 1rem;
+  --border-radius: 0.3rem;
+  --color-one: rgb(71 124 41 / 95%);
+  --color-two: rgb(255, 255, 255);
+  --color-three: hsl(0, 60%, 70%);
+  --color-four: hsl(225 73% 40% / 0.9);
+  --color-five: rgb(67 93 52 / 85%);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+    background-image: linear-gradient(in oklch, blue, red, orange, yellow);
+
+}
+
+main {
+  width: min(100% - 2rem, 600 / 16 * 1rem);
+  margin: auto;
+  padding: var(--spacer-two);
+  display: grid;
+  gap: 4rem;
+}
+
+input {
+  width: 100%;
+  padding: var(--spacer-one) var(--spacer-two);
+  outline: 1px solid var(--color-one);
+  margin-block-end: 0.5rem;
+  border-radius: var(--border-radius);
+}
+
+.button-container {
+  display: flex;
+  gap: var(--spacer-two);
+
+  @media (width < calc(460 / 16 * 1rem)) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+button {
+  flex: 1;
+  padding: var(--spacer-one) var(--spacer-two);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.save {
+  background-color: var(--color-one);
+  color: var(--color-two);
+  transition: background-color 2000ms, color 1000ms;
+}
+
+.save:is(:hover, :focus-visible) {
+  background-color: var(--color-two);
+  color: var(--color-one);
+  transition: background-color 200ms, color 500ms;
+}
+
+.delete {
+  background-color: var(--color-two);
+  outline: 1px solid var(--color-one);
+  color: var(--color-five);
+  transition: background-color 2000ms, color 1000ms;
+}
+
+.delete:is(:hover, :focus-visible){
+  background-color: black;
+  color: white;
+  transition: background-color 200ms, color 500ms;
+}
+
+ul {
+  background-color: var(--color-four);
+  padding: var(--spacer-two);
+  border-radius: var(--border-radius);
+  list-style: none;
+  overflow-wrap: anywhere;
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* Dynamic properties with JavaScript */
+button:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+ul a {
+  color: var(--color-two);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 800ms, font-weight 1000ms;
+}
+
+ul a:is(:hover, :focus-visible, :active) {
+  color: var(--color-three);
+  font-weight: 600;
+  transition: color 300ms, font-weight 400ms;
+}

@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    word-break: break-word;
+    color-scheme: light dark;
+}
+
+:root{
+    --space-1: clamp(0.5rem, 0.4492rem + 1.3559vw, 1.5rem);
+    --space-2: clamp(1rem, 0.8983rem + 2.7119vw, 3rem);
+    --font-size-1: clamp(0.875rem, 0.8559rem + 0.5085vw, 1.25rem);
+    --font-size-2: clamp(1rem, 0.9746rem + 0.678vw, 1.5rem);
+}
+
+main{
+    inline-size: min(80%, 600 / 16 * 1rem);
+    padding: var(--space-2);
+}
+
+form{
+    inline-size: 70%;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.data{
+    display: grid;
+    gap: 0.25rem;
+    font-size: var(--font-size-1);
+}
+
+input, button{
+    border: 1px solid;
+    outline-offset: 3px;
+}
+
+input{
+    min-inline-size: 0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.checkbox-item{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button{
+    justify-self: start;
+    padding: 0.35rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: var(--font-size-1);
+    cursor: pointer;
+    transition: background-color 1300ms, color 1200ms, filter 1500ms;
+}
+
+button:is(:hover, :focus-visible){
+    background-color: oklch(0.9054 0.0947 144.74);
+    color: oklch(0.3035 0.0978 142.69);
+    filter: drop-shadow(2px 2px 3px oklch(0.6449 0.2255 16.94));
+    transition: background-color 850ms, color 800ms, filter 800ms;
+}
+
+.error-section{
+    background-color: oklch(0.7056 0.077 250.75);
+    margin-block-end: var(--space-1);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    color: oklch(0.1826 0.0152 144.92);
+}
+
+.form-error-heading{
+    margin-block-end: 1rem;
+    font-weight: 600;
+    text-box: trim-both cap alphabetic;
+}
+
+.form-error-list{
+    list-style-position: inside;
+}
+
+.form-hide{
+    display: none;
+}
+
+h1{
+    margin-block-end: var(--space-1);
+    font-size: var(--font-size-2);
+}
+
+a{
+    font-size: var(--font-size-1);
+}

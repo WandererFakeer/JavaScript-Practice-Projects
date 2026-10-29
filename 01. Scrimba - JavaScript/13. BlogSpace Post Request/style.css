@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Karla", Sans-serif;
+}
+
+:root {
+  --border-radius: 0.5rem;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0%;
+}
+
+h1 {
+  background-color: lch(82.49 73.54 81.48);
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+form {
+  background-color: lightblue;
+  margin-block-start: 2rem;
+  padding: 2rem 1rem;
+  display: grid;
+}
+
+:where(input, textarea, button) {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 1000ms;
+}
+
+:where(input, textarea, button):is(:hover, :focus-visible) {
+  background-color: #90ee90;
+  transition: background-color 600ms;
+}
+
+:where(input, textarea) {
+  margin-block-end: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+input {
+  font-weight: 700;
+}
+
+button {
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+main {
+  padding: 2rem 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Dynamically added element with JavaScript */
+article {
+  padding: 0 1rem 1rem;
+  border-bottom: 1px solid gray;
+  display: grid;
+  gap: 1rem;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"defer></script>
+</head>
+<body>
+    <main>
+        <form action="" id="form">
+            <div class="task-classification">
+                <h2 class="task-classification-name">Backlog</h2>
+                <ul class="task-list" data-task="backlog"></ul>
+                <input type="text" name="backlog" id="backlog-task" class="entered-task" value="">
+            </div>
+
+            <div class="task-classification">
+                <h2 class="task-classification-name">Doing</h2>
+                <ul class="task-list" data-task="doing"></ul>
+                <input type="text" name="doing" id="doing-task" class="entered-task">
+            </div>
+
+            <div class="task-classification">
+                <h2 class="task-classification-name" >Done</h2>
+                <ul class="task-list" data-task="done"></ul>
+                <input type="text" name="done" id="done-task" class="entered-task">
+            </div>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  word-break: break-word;
+  hyphens: auto;
+  text-box: trim-both cap alphabetic;
+}
+
+:root{
+  --space-small: clamp(0.25rem, 0.234rem + 0.4255vw, 0.5rem);
+  --space-medium: clamp(0.5rem, 0.4681rem + 0.8511vw, 1rem);
+  --space-large: clamp(1rem, 0.9362rem + 1.7021vw, 2rem);
+  --border-radius-1: 0.25rem;
+  --border-radius-2: 0.5rem;
+  --border-radius-3: 1rem;
+  --body-background-color-1: oklch(0.4643 0.0986 303.54);
+  --body-background-color-2: oklch(0.4388 0.1267 289.95);
+  --main-shadow-color: oklch(0.1742 0.0115 242.49 / 50%);
+  --header-background-color: oklch(0.1968 0.0074 229.3);
+  --header-font-color: oklch(0.8574 0.0062 223.47);
+  --form-background-color: oklch(1 0 0 / 4%);
+  --form-heading-font-color: oklch(0.9644 0.0045 214.33);
+  --form-heading-font-color-empasize: oklch(0.8895 0.007 247.9);
+  --form-textarea-background-color: oklch(1 0 0 / 5.5%);
+  --form-textarea-font-color: oklch(1 0 0 / 85%);
+  --form-textarea-word-limit-font-color: oklch(100% 0.00011 271.152 / 0.151);
+  --form-textarea-correct-box-shadow-color: oklch(0.5668 0.1114 159);
+  --form-textarea-incorrect-box-shadow-color: oklch(0.4588 0.1094 33.87);
+  --other-feedbacks-article-background-color:oklch(0.9787 0.0017 247.84);
+  --other-feedback-border-color: oklch(0.95 0 0);
+  --other-feedback-upvote-background-color: oklch(0.9714 0.0042 236.5);
+  --other-feedback-upvote-hover: oklch(0.9 0.0042 236.5);
+  --other-feedback-upvote-fill-color: oklch(0.8578 0.0085 271.32);
+  --other-feedback-company-badge-background-color-1: oklch(0.4491 0.1025 291.03);
+  --other-feedback-company-badge-background-color-2: oklch(0.473 0.1071 308.77);
+  --other-feedback-company-badge-background-color-3: oklch(0.5369 0.0674 220.2);
+  --other-feedback-company-badge-background-color-4: oklch(0.575 0.0675 88.85);
+  --other-feedback-company-badge-background-color-5: oklch(0.584 0.084 160.81);
+  --other-feedback-company-badge-background-color-6: oklch(0.4679 0.0832 271.03);
+  --other-feedback-company-badge-font-color: oklch(1 0 0);
+  --other-feedback-company-name-font-color: oklch(0.643 0.0142 266.65);
+  --other-feedback-time-font-color: oklch(0.6373 0.0107 273.28);
+  --other-feedback-upvote-count-font-color: oklch(0.5415 0.0115 267.29);
+  --other-feedback-description-font-color: oklch(0.1959 0.0062 271.09);
+  --hashtag-background-color: oklch(1 0 0 / 6%);
+  --hashtag-font-color: oklch(1 0 0 / 60%);
+  --font-size: calc(14 / 16 * 1rem);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.visually-hidden{
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  border: none;
+  white-space: nowrap;
+  position: absolute;
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+
+body{
+  background-image: linear-gradient(200deg, var(--body-background-color-1), var(--body-background-color-2));
+  padding: var(--space-large);
+}
+
+.feedback-section{
+  inline-size: min(90%, 800 / 16 * 1rem);
+  block-size: calc(100dvh - (var(--space-large) * 2));
+  margin-inline: auto;
+  border-radius: var(--border-radius-1);
+  box-shadow: 0px 0px 50px var(--main-shadow-color);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  anchor-name: --company-filter;
+}
+
+.company-details-and-form{
+  background-color: var(--header-background-color);
+  padding: var(--space-large);
+  box-shadow: 0px 0px 50px var(--main-shadow-color);
+}
+
+.company-name{
+  margin-block-end: var(--space-medium);
+  color: var(--header-font-color);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.company-logo{
+  inline-size: 1.25rem;
+  display: inline-block;
+  margin: auto;
+  fill: var(--header-font-color);
+  transform: rotate(-10deg);
+}
+
+.company-name-lighter-font{
+  font-weight: 400;
+}
+
+.form-feedback{
+  background-color: var(--header-background-color);
+  padding-inline: var(--space-large);
+}
+
+fieldset{
+  border: none;
+}
+
+.form-feedback-tagline{
+  margin-block-end: var(--space-large);
+  color: var(--form-heading-font-color);
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.form-feedback-tagline-emphasize{
+  color: var(--form-heading-font-color-empasize);
+}
+
+textarea{
+  background-color: var(--form-background-color);
+  inline-size: 80%;
+  block-size: 7rem;
+  margin-inline: auto;
+  padding: var(--space-medium);
+  outline-offset: 3px;
+  border-radius: var(--border-radius-2);
+  display: block;
+  color: var(--form-textarea-font-color);
+  font-size: 1rem;
+  resize: none;
+  anchor-name: --word-limit-and-button;
+  transition: background-color 1000ms;
+}
+
+textarea:is(:hover, :focus-visible){
+  background-color: var(--form-textarea-background-color);
+  transition: background-color 500ms;
+}
+
+.form-feedback-letter-limit{
+  color: var(--form-textarea-word-limit-font-color);
+  font-style: italic;
+  position: absolute;
+  position-anchor: --word-limit-and-button;
+  inset-inline-start: calc(anchor(left) + var(--space-medium));
+  inset-block-end: calc(anchor(bottom) + var(--space-medium));
+}
+
+.form-feedback-button{
+  border: none;
+  padding: var(--space-small) 1.5rem;
+  border-radius: var(--border-radius-3);
+  text-transform: uppercase;
+  cursor: pointer;
+  position: absolute;
+  position-anchor: --word-limit-and-button;
+  inset-inline-end: calc(anchor(right) + var(--space-medium));
+  inset-block-end: calc(anchor(bottom) + var(--space-medium));
+
+  @media(prefers-reduced-motion: no-preference){
+    transition: transform 1500ms;
+  }
+
+}
+
+.form-feedback-button:is(:hover, :focus-visible){
+  transform: translateY(-2px) scale(1.15);
+
+  @media(prefers-reduced-motion: no-preference){
+    transition: transform 800ms;
+  }
+  
+}
+
+.other-feedbacks{
+  background-color: var(--other-feedbacks-article-background-color);
+  overflow-y: auto;
+  anchor-name: --spinner;
+}
+
+.loader {
+  --color-1: oklch(0.75 0 0);
+  --color-2: oklch(0.653527 0.234792 34.037);
+  --size: 1.35px;
+
+  inline-size: calc(48 * var(--size));
+  block-size: calc(48 * var(--size));
+  border: calc(5 * var(--size)) solid var(--color-1);
+  border-bottom-color: var(--color-2);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  position-anchor: --spinner;
+  inset-block-start: calc(anchor(top) + var(--space-large));
+  justify-self: anchor-center;
+  animation: rotation 1s linear infinite;
+}
+
+.loader-disable{
+  display: none;
+}
+
+.other-feedbacks-list-container{
+  overflow: auto;
+  container-type: inline-size;
+  container-name: feedbacks-container;
+}
+
+.other-feedback{
+  border-block: 1px solid var(--other-feedback-border-color);
+  padding: var(--space-medium) var(--space-large);
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 1fr;
+  grid-template-areas: 
+                    "feedback-upvote-icon feedback-company-badge feedback-company-name feedback-post-days-ago"
+                    "feedback-upvote-count feedback-description feedback-description feedback-description";
+  
+  gap: var(--space-medium);
+  place-items: center;
+  will-change: transform;
+
+  @container feedbacks-container (inline-size >= calc(320 / 16 * 1rem)){
+    grid-template-columns: 1fr 1fr 6fr 1fr;
+    grid-template-areas: 
+                    "feedback-upvote-icon feedback-company-badge feedback-company-name feedback-post-days-ago"
+                    "feedback-upvote-count feedback-company-badge feedback-description feedback-post-days-ago";
+                    
+    place-items: unset;
+    gap: 0.1rem var(--space-small);          
+  }
+
+  @media(prefers-reduced-motion: no-preference){
+    transition: background-color 1000ms, color 900ms, transform 800ms;
+  }
+
+}
+
+.other-feedback:is(:hover, :focus-visible){
+  background-color: var(--other-feedback-upvote-fill-color);
+
+  @media(prefers-reduced-motion: no-preference){
+    transform: translateX(5px);
+    transition: background-color 600ms, transform 500ms;
+  }
+  
+}
+
+.other-feedback:is(:hover, :focus-visible) .other-feedback-description{
+  color: var(--other-feedback-company-badge-background-color-5);
+  
+  @media(prefers-reduced-motion: no-preference){
+    transition: color 900ms;
+  }
+  
+}
+
+.other-feedback-upvote-icon{
+  background-color: var(--other-feedback-upvote-background-color);
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  border: none;
+  border-radius: var(--border-radius-1);
+  cursor: pointer;
+  grid-area: feedback-upvote-icon;
+  place-self: center;
+  display: grid;
+  place-items: center;
+}
+
+.other-feedback-upvote-icon:is(:hover, :focus-visible){
+  background-color: var(--other-feedback-upvote-hover);
+}
+
+.upvote-icon{
+  inline-size: inherit;
+  block-size: inherit;
+  fill: var(--other-feedback-upvote-fill-color);
+}
+
+.other-feedback-company-badge{
+  inline-size: 3rem;
+  aspect-ratio: 1;
+  border-radius: var(--border-radius-1);
+  grid-area: feedback-company-badge;
+  justify-self: center;
+  display: grid;
+  place-content: center;
+  color: var(--other-feedback-company-badge-font-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.other-feedback:nth-of-type(6n + 1) :where(.other-feedback-company-badge){
+  background-color: var(--other-feedback-company-badge-background-color-1);
+}
+
+.other-feedback:nth-of-type(6n + 2) :where(.other-feedback-company-badge){
+  background-color: var(--other-feedback-company-badge-background-color-2);
+}
+
+.other-feedback:nth-of-type(6n + 3) :where(.other-feedback-company-badge){
+  background-color: var(--other-feedback-company-badge-background-color-3);
+}
+
+.other-feedback:nth-of-type(6n + 4) :where(.other-feedback-company-badge){
+  background-color: var(--other-feedback-company-badge-background-color-4);
+}
+
+.other-feedback:nth-of-type(6n + 5) :where(.other-feedback-company-badge){
+  background-color: var(--other-feedback-company-badge-background-color-5);
+}
+
+.other-feedback:nth-of-type(6n + 6) :where(.other-feedback-company-badge){
+  background-color: var(--other-feedback-company-badge-background-color-6);
+}
+
+.other-feedback-company-name{
+  grid-area: feedback-company-name;
+  color: var(--other-feedback-company-name-font-color);
+  font-size: var(--font-size);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.other-feedback-time{
+  grid-area: feedback-post-days-ago;
+  place-self: center;
+  color: var(--other-feedback-time-font-color);
+}
+
+.other-feedback-upvote-number{
+  grid-area: feedback-upvote-count;
+  justify-self: center;
+  color: var(--other-feedback-upvote-count-font-color);
+}
+
+.other-feedback-description-truncated{
+  grid-area: feedback-description;
+  color: var(--other-feedback-description-font-color);
+  font-size: var(--font-size);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.other-feedback-description{
+  overflow: visible;
+
+  @media(prefers-reduced-motion: no-preference){
+    transition: color 2000ms;
+  }
+}
+
+.filter-companies{
+  margin-block-start: var(--space-large);
+  display: grid;
+  justify-content: center;
+  gap: var(--space-medium);
+
+  @media(width >= 1150px){
+    margin-block-start: 0;
+    position: absolute;
+    position-anchor: --company-filter;
+    inset-inline-start: calc(anchor(right) + var(--space-large));
+    inset-block-start: calc(anchor(top) + var(--space-large));
+  }
+  
+}
+
+.hashtag-company{
+  background-color: var(--hashtag-background-color);
+  border: none;
+  padding: 0.75rem;
+  border-radius: var(--border-radius-3);
+  color: var(--hashtag-font-color);
+  font-size: calc(13 / 16 * 1rem);
+  cursor: pointer;
+  transition: color 1200ms, transform 1000ms;
+}
+
+.hashtag-company:is(:hover, :focus-visible){
+  color: var(--other-feedback-company-badge-font-color);
+  transform: scale(1.11);
+  transition: color 600ms, transform 500ms;
+}
+
+.textarea-correct{
+  box-shadow: 0 0 0 2px var(--form-textarea-correct-box-shadow-color);
+}
+
+.textarea-incorrect{
+  box-shadow: 0 0 0 2px var(--form-textarea-incorrect-box-shadow-color);
+}
+
+:where(.textarea-incorrect):is(:hover, :focus){
+  outline: none;
+}
+
+.hidden-upvote-icon{
+  visibility: hidden;
+}

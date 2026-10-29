@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <form action="" id="form">
+            <ol>
+                <li class="answer-and-options">
+                    <h2>What does this code return? 
+                        <code>(0 || "" || false || "Hi")</code>
+                    </h2>
+
+                    <ul>
+                        <li class="option">
+                            <input type="radio" id="answer-one-option-a" name="answer-one" value="0">
+                            <label for="answer-one-option-a">
+                                <code>0</code>
+                            </label>
+                        </li>
+
+                        <li class="option">
+                            <input type="radio" id="answer-one-option-b" name="answer-one" value="Hi">
+                            <label for="answer-one-option-b">
+                                <code>"Hi"</code>
+                            </label>
+                        </li>
+
+                        <li class="option">
+                            <input type="radio" id="answer-one-option-c" name="answer-one" value="false">
+                            <label for="answer-one-option-c">
+                                <code>false</code>
+                            </label>
+                        </li>
+                    
+                        <li class="option">
+                            <input type="radio" id="answer-one-option-d" name="answer-one" value="">
+                            <label for="answer-one-option-d">
+                                <code>""</code>
+                            </label>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <li class="answer-and-options">
+                    <h2>What is it called when a function calls itself?</h2>
+
+                    <ul>
+                        <li class="option">
+                            <input type="radio" id="answer-two-option-a" name="answer-two" value="Inception">
+                            <label for="answer-two-option-a">Inception</label>
+                        </li>
+                    
+                        <li class="option">
+                            <input type="radio" id="answer-two-option-b" name="answer-two" value="Self-Referencial">
+                            <label for="answer-two-option-b">Self-Referencial</label>
+                        </li>
+
+                        <li class="option">
+                            <input type="radio" id="answer-two-option-c" name="answer-two" value="Recursion">
+                            <label for="answer-two-option-c">Recursion</label>
+                        </li>
+
+                        <li class="option">
+                            <input type="radio" id="answer-two-option-d" name="answer-two" value="Who Cares">
+                            <label for="answer-two-option-d">Who Cares</label>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="answer-and-options">
+                    <h2>How do you access the name of the
+                        <code>data-count</code>
+                        data attribute in JavaScript?
+                    </h2>
+
+                    <ul>
+                        <li class="option">
+                            <input type="radio" id="answer-three-option-a" name="answer-three" value="element.dataset.count">
+                            <label for="answer-three-option-a">
+                                <code>element.dataset.count</code>
+                            </label>
+                        </li>
+
+                        <li class="option">
+                            <input type="radio" id="answer-three-option-b" name="answer-three" value="element.dataAttribute.count">
+                            <label for="answer-three-option-b">
+                                <code>element.dataAttribute.count</code>
+                            </label>
+                        </li>
+
+                        <li class="option">
+                            <input type="radio" id="answer-three-option-c" name="answer-three" value="element.dataset.dataCount">
+                            <label for="answer-three-option-c">
+                                <code>element.dataset.dataCount</code>
+                            </label>
+                        </li>
+
+                        <li class="option">
+                            <input type="radio" id="answer-three-option-d" name="answer-three" value="element.dataCount">
+                            <label for="answer-three-option-d">
+                                <code>element.dataCount</code>
+                            </label>
+                        </li>
+                    </ul>
+                </li>
+
+            </ol>
+
+            <button type="submit">Check</button>
+        </form>
+
+        <aside class="congrats-banner" id="congrats-banner" hidden>
+            <h1>Congratulations!!</h1>
+            <p class="correct-tagline">You got them all right!</p>
+        </aside>
+    </main>
+</body>
+</html>

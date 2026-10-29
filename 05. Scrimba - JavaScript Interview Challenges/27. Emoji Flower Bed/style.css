@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  inline-size: min(100% - 2rem, 450 / 16 * 1rem);
+  margin: 2rem auto;
+  text-align: center;
+}
+
+ul {
+  background-color: oklch(93.285% 0.05135 71.817);
+  padding: clamp(0.75rem, 0.7373rem + 0.339vw, 1rem)
+    clamp(1rem, 0.9492rem + 1.3559vw, 2rem);
+  border-radius: 0.5rem;
+  list-style-type: "";
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+li {
+  font-size: 2rem;
+}

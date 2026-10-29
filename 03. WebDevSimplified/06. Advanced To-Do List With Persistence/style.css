@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color-scheme: light dark;
+}
+
+main{
+    inline-size: min(80%, 700 / 16 * 1rem);
+    margin-block: 2rem;
+    padding-inline: 1rem;
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+    gap: 2rem;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1rem, 0.9063rem + 2.5vw, 2rem);
+}
+
+form > *{
+    min-inline-size: 0;
+}
+
+label, input, button{
+    font-size: clamp(1rem, 0.9531rem + 1.25vw, 1.5rem);
+}
+
+input, button{
+    border: 1px solid gray;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+}
+
+input{
+    flex: 1;
+}
+
+button{
+    background-color: oklch(0.3026 0.07 276.94);
+    border-radius: 1rem;
+    color: oklch(1 0 0);
+    cursor: pointer;
+    transition: background-color 1200ms, color 1500ms;
+}
+
+button:is(:hover, :focus-visible){
+    background-color:oklch(0.4423 0.0514 24.48);
+    color: oklch(0.9022 0.1458 146.96);
+    transition: background-color 1200ms, color 1000ms;
+}
+
+ul{
+    display: grid;
+    gap: clamp(0.75rem, 0.7266rem + 0.625vw, 1rem);
+    font-size: clamp(1rem, 0.9531rem + 1.25vw, 1.5rem);
+    list-style-type: "";
+    text-align: center;
+}
+
+.to-do-item{
+    background-color: oklch(0.6085 0.1242 277.29);
+    margin-inline-end: clamp(1rem, 0.9531rem + 1.25vw, 1.5rem);
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    text-box: trim-both text text;
+    cursor: pointer;
+}

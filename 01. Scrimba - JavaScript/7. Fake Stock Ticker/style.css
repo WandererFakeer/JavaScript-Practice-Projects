@@ -1,0 +1,70 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Sans-serif;
+}
+
+:root{
+  --spacer-one: 0.5rem;
+  --spacer-two: 1rem;
+  --color-one: #282828;
+  --color-two: white;
+  --color-three: #19803F;
+  --color-four: #DC2626;
+  --color-five: #6B7280;
+}
+
+html, body{
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-one);
+  display: grid;
+  place-items: center;
+}
+
+main{
+  background-color: var(--color-two);
+  width: min(100% - 2rem, 22rem);
+  padding: var(--spacer-two) 2rem;
+  border-radius: var(--spacer-one);
+  display: grid;
+  gap: var(--spacer-one);
+}
+
+h1, p{
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+svg{
+  width: 1.5rem;
+  height: 1.2rem;
+}
+
+.visually-hidden{
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  position: absolute;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* Dynamic selectors with JavaScript */
+.price{
+  transition: color 160ms ease;
+}
+
+.price[data-trend="up"]{  color: var(--color-three);
+}
+
+.price[data-trend="down"]{
+  color: var(--color-four);
+}
+
+.price[data-trend="flat"]{
+  color: var(--color-five);
+}

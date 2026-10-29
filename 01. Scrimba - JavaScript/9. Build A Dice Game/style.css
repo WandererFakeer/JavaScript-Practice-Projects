@@ -1,0 +1,122 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Sans-serif;
+}
+
+:root {
+  --spacer-1: 0.5rem;
+  --spacer-2: 1rem;
+  --spacer-3: 2rem;
+  --border-radius: 0.5rem;
+  --color-1: hsl(150, 100%, 75%);
+  --color-2: rgb(0, 0, 0);
+  --color-3: hsl(140, 100%, 23.7%);
+  --color-4: hsl(245, 70.35%, 55.35%);
+  --color-5: hsl(0, 96.61%, 35.32%);
+  --color-6: rgba(255 255 255 / 0.8);
+  --color-7: #00008a;
+  --color-8: white;
+}
+
+body{
+  background-color: var(--color-1);
+}
+
+main{
+  background-color: var(--color-6);
+  width: min(100% - 2rem, 500 / 16 * 1rem);
+  margin: var(--spacer-3) auto;
+  padding: var(--spacer-3);
+  border-radius: var(--border-radius);
+  text-align: center;
+  display: grid;
+  gap: var(--spacer-2);
+  filter: drop-shadow(-2px 2px 8px var(--color-2));
+}
+
+h1{
+  margin-block-end: var(--spacer-2);
+  color: var(--color-3);
+  font-size: 1.8rem;
+  text-shadow: -2px 2px 6px var(--color-3);
+}
+
+article{
+  display: flex;
+  gap: clamp(0.5rem, 0.6rem + 0.5vw, 1rem);
+}
+
+.total-score-container{
+  justify-content: space-between;
+}
+
+.current-score-container{
+  justify-content: space-around;
+}
+
+p{
+  font-weight: 600;
+}
+
+.total-score{
+  background-color: var(--color-7);
+  padding: var(--spacer-1) var(--spacer-2);
+  font-size: 1.2rem;
+}
+
+:where(.total-score, .current-score){
+  border-radius: var(--border-radius);
+  color: var(--color-8);
+}
+
+.current-score{
+  background-color: var(--color-4);
+  padding: var(--spacer-3) 2.5rem;
+  font-size: 2rem;
+  text-shadow: -4px 2px 2px var(--color-2);
+}
+
+.active-player{
+  outline: 2px solid var(--color-2);
+  box-shadow: -8px 8px 6px var(--color-2);
+  
+  @media (prefers-reduced-motion: no-preference){
+    transition: outline 150ms, box-shadow 150ms;
+  }
+  
+}
+
+button{
+  background-color: var(--color-5);
+  margin-block-start: var(--spacer-3);
+  border: none;
+  padding: var(--spacer-2) var(--spacer-3);
+  border-radius: var(--border-radius);
+  color: var(--color-8);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  filter: drop-shadow(-4px 4px 6px var(--color-2));
+  transition: text-shadow 800ms;
+}
+
+button:is(:hover, :focus-visible){
+  text-shadow: -4px 4px 4px var(--color-2);
+  transition: text-shadow 500ms;
+}
+
+[hidden]{
+  display: none;
+}
+
+.visually-hidden{
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  position: absolute;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CorpComment</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+
+  <main class="feedbacks">
+
+    <section class="feedback-section" aria-labelledby="feedback-section">
+
+      <header class="company-details-and-form">
+
+        <h1 class="company-name" id="feedback-section">
+          <svg class="company-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.677 18.52c.914 1.523-.183 3.472-1.967 3.472h-19.414c-1.784 0-2.881-1.949-1.967-3.472l9.709-16.18c.891-1.483 3.041-1.48 3.93 0l9.709 16.18z"/></svg>
+          Corp<span class="company-name-lighter-font">Comment</span></h1>
+
+        <form method="POST" class="form-feedback" id="form">
+
+          <fieldset>
+            <h2 class="form-feedback-tagline">Give Feedback.
+              <em class="form-feedback-tagline-emphasize">Publicly.</em>
+            </h2>
+            <label for="textarea">
+              <textarea name="" id="textarea" placeholder="Enter your feedback here, remember to #hashtag the company ✏️" maxlength="150" spellcheck="false"></textarea>
+            </label>
+            <p class="form-feedback-letter-limit">
+              <span class="visually-hidden">Maximum character limit:</span>150
+            </p>
+            <button class="form-feedback-button">Submit</button>
+          </fieldset>
+
+        </form>
+      </header>
+
+      <article class="other-feedbacks">
+        <span class="loader"></span>
+        <ol class="other-feedbacks-list-container"></ol>
+      </article>
+    </section>
+
+    <aside class="filter-companies"></aside>
+
+  </main>
+
+</body>
+</html>

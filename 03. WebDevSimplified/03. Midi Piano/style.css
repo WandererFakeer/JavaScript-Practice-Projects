@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --space: 2rem;
+}
+
+body{
+    background-color: oklch(0.285318 0.093963 255.0021);
+}
+
+main{
+    inline-size: min(100% - var(--space), 700 / 16 * 1rem);
+    margin: var(--space) auto;
+    display: flex;
+    justify-content: center;
+}
+
+.key{
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.key:is(:hover, :focus-visible){
+    background: linear-gradient(to bottom, oklch(0.9067 0 0) 0%, oklch(0.8576 0 0) 100%);
+    box-shadow: 
+                inset 0 4px 8px oklch(0 0 0 / 50%),
+                inset 0 1px 2px oklch(1 0 0 / 50%); 
+}
+
+.white{
+    --inline-size: 5rem;
+
+    background-color:oklch(1 0 0);
+    inline-size: var(--inline-size);
+    block-size: calc(var(--inline-size) * 4);
+    
+}
+
+.black{
+    --inline-size: 3rem;
+
+    background-color:oklch(0 0 0);
+    inline-size: var(--inline-size);
+    block-size: calc(var(--inline-size) * 4);
+    margin-inline: calc(var(--inline-size) / -2);
+    z-index: 1;
+}
+
+.active-key{
+    background-color: oklch(0.6513 0.0076 247.94);
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RemoteDev Job Board</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <header class="page-header">
+    <a href="." class="home-page">
+      <img src="assets/logo.svg" alt="" class="logo">
+    </a>
+  
+    <form action="" method="get" id="form">
+      <label for="find-jobs">
+        <input type="text" name="" id="find-jobs" placeholder="Find remote developer jobs...">
+      </label>
+    </form>
+
+  </header>
+
+  <main>
+    <aside class="search-results-section">
+
+      <div class="job-search-navigation">
+        <p class="search-results-number">0 <span class="results">results</span></p>
+        <button type="button" class="relevant-button sorting-button-active">Relevant</button>
+        <button type="button" class="recent-button">Recent</button>
+      </div>
+
+      <ol class="search-results"></ol>
+
+      <footer class="pagination">
+        <nav class="pagination-navigation">
+          <ul class="pagination-list">
+            <li class="pagination-item">
+              <button class="pagination-button pagination-back" type="button" hidden>&larr; Page 1</button>
+            </li>
+
+            <li class="pagination-item">
+              <button class="pagination-button pagination-next" type="button" disabled>Page 2 &rarr;</button>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+      
+    </aside>
+
+    <article class="search-details-section">
+      <h1>What are you looking for?</h1>
+      <p class="start-search">Start by searching for any technology your ideal job is working with</p> 
+    </article>
+  </main>
+</body>
+</html>

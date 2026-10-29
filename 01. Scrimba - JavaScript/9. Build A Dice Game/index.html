@@ -1,0 +1,20 @@
+<main>
+  <h1 class="heading" id="heading">Player 1 Turn</h1>
+  
+  <article class="total-score-container">
+    <p class="total-score">Player 1 Score: <span id="player-1-total">0</span></p>
+    <p class="total-score">Player 2 Score: <span id="player-2-total">0</span></p>
+  </article>
+  
+  <article class="current-score-container">
+    <p class="current-score active-player" id="player-1-current-score">-</p>
+    <p class="current-score" id="player-2-current-score">-</p>
+  </article>
+  
+  <div class="button-container" role="group" aria-label="Action buttons">
+    <button class="roll" id="roll" aria-label="Roll dice">Roll Dice 🎲</button>
+    <button class="reset" id="reset" aria-label="Reset game" hidden>Reset Game 🔄</button>
+  </div>
+  
+  <div class="visually-hidden" id="details-announcement" role="status" aria-atomic="true"></div>
+</main>

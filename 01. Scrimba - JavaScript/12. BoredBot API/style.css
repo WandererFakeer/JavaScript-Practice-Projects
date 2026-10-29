@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Sans-serif;
+}
+
+:root {
+  --color-1: lch(78.394 71.789 80.359);
+  --color-2: lch(57.725 90.432 43.675);
+  --color-3: lch(10.18 50.5 295.09);
+  --color-4: lch(30.18 80.5 301.09);
+  --color-5: lch(100 0 0);
+  --color-6: lch(40.29% 106.84 40.86);
+  --color-7: lch(90.627% 77.826 140.316);
+  --color-8: lch(31 79.07 39.89 / 0.8);
+  --color-9: lch(0 0 360);
+}
+
+html, body{
+  height: 100dvh;
+}
+
+body {
+  background-image: linear-gradient(var(--color-1), var(--color-2));
+  background-repeat: no-repeat;
+}
+
+main {
+  width: min(100% - 2rem, 600 / 16 * 1rem);
+  margin: auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.activity-normal {
+  padding: 3rem 1.5rem;
+  border-radius: 0.5rem;
+  color: var(--color-9);
+  font-size: 2rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+button {
+  background-color: var(--color-6);
+  justify-self: center;
+  width: 5rem;
+  aspect-ratio: 1;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--color-5);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-shadow: -2px 2px 20px var(--color-5);
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: filter 1000ms, transform 800ms;
+  }
+  
+}
+
+button:is(:hover, :focus-visible) {
+  background-color: var(--color-8);
+  
+  @media (prefers-reduced-motion: no-preference) {
+    filter: drop-shadow(-2px 2px 8px var(--color-6));
+    transform: translateY(-5px);
+    transition: filter 500ms, transform 350ms;
+  }
+  
+}
+
+/* Dynamically generated class from JavaScript */
+.activity-generated-background{
+  
+  @media (prefers-reduced-motion: no-preference) {
+    background-image: linear-gradient(var(--color-3), var(--color-4));
+  }
+  
+}
+
+.activity-generated-heading{
+  
+  @media (prefers-reduced-motion: no-preference) {
+    color: var(--color-7);
+  }
+  
+}
+
+.activity-generated-text{
+  
+  @media (prefers-reduced-motion: no-preference) {
+    color: var(--color-5);
+    text-shadow: -8px 8px 40px var(--color-5);
+  }
+  
+}

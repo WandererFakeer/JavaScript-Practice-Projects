@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Sans-serif;
+}
+
+:root {
+  --color-one: hsl(210.98deg 58.97% 65.81%);
+  --color-two: hsl(30, 51%, 45%);
+  --color-three: hsl(44.83deg 23.34% 10.05%);
+  --color-four: hsl(240, 70%, 30%);
+  --color-five: hsl(240, 90%, 70%);
+  --color-six: hsl(20, 75.09%, 33.62%);
+  --color-seven: hsl(147.29deg 55.61% 14.04%);
+  --color-eight: hsl(282, 100%, 21%);
+  --color-nine: rgb(31, 41, 55);
+  --color-ten: rgb(31, 41, 55);
+  --color-eleven: rgb(31, 41, 55);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(
+    var(--color-nine) 60%,
+    var(--color-ten) 80%,
+    var(--color-eleven) 100%
+  );
+}
+
+main {
+  background-color: var(--color-one);
+  width: min(100% - 2rem, 700 / 16 * 1rem);
+  aspect-ratio: 1.6 / 1;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  outline: 3px solid var(--color-two);
+  border-radius: 0.7rem;
+  text-align: center;
+  display: grid;
+  gap: 2rem;
+}
+
+h1 {
+  color: var(--color-three);
+  font-size: clamp(1.2rem, calc(1.5rem + 0.5vw), 2.5rem);
+}
+
+.enter-counter {
+  color: var(--color-four);
+  font-size: clamp(1rem, calc(1.5rem + 0.5vw), 2rem);
+  font-weight: 600;
+}
+
+#enter-count {
+  margin-block-start: 1rem;
+  display: block;
+}
+
+.button-container {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+}
+
+button {
+  width: calc(200 / 16 * 1rem);
+  border: none;
+  padding: 0.8rem;
+  outline: 2px solid var(--color-five);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:first-of-type {
+  background-color: var(--color-six);
+}
+
+button:first-of-type:hover,
+button:first-of-type:focus-visible {
+  background-color: hsl(20 93% 35% / 0.8);
+}
+
+button:last-of-type {
+  background-color: var(--color-seven);
+}
+
+button:last-of-type:hover,
+button:last-of-type:focus-visible {
+  background-color: hsl(147.29 55.61% 14.04% / 0.7);
+}
+
+.save-counter {
+  color: var(--color-eight);
+  font-size: 1.5rem;
+  font-weight: 700;
+}

@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.map{
+    inline-size: min(80%, 1000 / 16 * 1rem);
+    margin: 1.5rem auto;
+    outline: 1px solid;
+    border-radius: 0.25rem;
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+}

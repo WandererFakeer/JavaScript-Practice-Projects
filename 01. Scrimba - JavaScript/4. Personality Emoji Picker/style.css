@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+
+*{
+  margin: 0;
+  border: none;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Baloo 2", sans-serif;
+  text-align: center;
+}
+
+:root{
+  --spacer-one: 0.3rem;
+  --spacer-two: 1rem;
+  --color-one: hsl(197, 71%, 73%);
+  --color-two: white;
+  --color-three: rgb(21 125 19 / 0.9);
+  --color-four: rgb(187 44 63 / 1);
+  --color-five: rgb(21 125 19 / 0.7);
+  --color-six: rgb(187 44 63 / 0.7);
+  --font-size: 1rem;
+  --font-weight: 700;
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  background-image: linear-gradient(var(--color-one), var(--color-two));
+}
+
+main{
+  width: min(100% - 2rem, 1200 / 16 * 1rem);
+  margin: 0 auto;
+  padding: var(--spacer-two);
+  display: grid;
+  justify-items: center;
+  gap: var(--spacer-two);
+}
+
+h1{
+  color: var(--color-two);
+}
+
+.emoji-container{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+input{
+  justify-self: center;
+  padding: var(--spacer-one) var(--spacer-two);
+  border-radius: var(--spacer-one);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+}
+
+.button-container:first-of-type{
+  margin-block-end: 1.5rem;
+}
+
+.button-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacer-one);
+}
+
+button{
+  padding: var(--spacer-one) var(--spacer-two);
+  border-radius: var(--spacer-one);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  cursor: pointer;
+}
+
+.add{
+  background-color: var(--color-three);
+  color: var(--color-two);
+  transition: background-color 800ms;
+}
+
+.add:is(:hover, :focus-visible){
+  background-color: var(--color-five);
+  transition: background-color 300ms;
+}
+
+.remove{
+  background-color: var(--color-four);
+  color: var(--color-two);
+  transition: background-color 800ms;
+}
+
+.remove:is(:hover, :focus-visible){
+  background-color: var(--color-six);
+  transition: background-color 300ms;
+}
+
+/* Dynamic element with JavaScript */
+button:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+li { 
+  font-size: 2.5rem;
+  text-shadow: 
+    -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
